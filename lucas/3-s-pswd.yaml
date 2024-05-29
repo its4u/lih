@@ -1,0 +1,7 @@
+kind: Secret
+apiVersion: v1
+metadata:
+  name: postgres-password
+data:
+  password: cDQ1NXcwcmQ=
+type: Opaque

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: container
-        image: image-registry.openshift-image-registry.svc:5000/sample/postgresql:latest
+        image: image-registry.openshift-image-registry.svc:5000/sample/postgresql-sample:latest
         imagePullPolicy: Always
         ports:
           - containerPort: 5432
@@ -22,7 +22,7 @@ spec:
         command:
         - /bin/sh
         - -c
-        - echo "Container UP." &&  && tail -f /dev/null
+        - echo "Container UP. Requesting DB:" && psql -U "$POSTGRESQL_USER" -d "$POSTGRESQL_DATABASE" -c "SELECT 1;" && tail -f /dev/null
       terminationGracePeriodSeconds: 0
   revisionHistoryLimit: 0
   strategy:
