@@ -19,6 +19,12 @@ spec:
         ports:
           - containerPort: 5432
             protocol: TCP
+        volumeMounts:
+          - name: data
+            mountPath: /var/lib/pgsql/data
+      volumes:
+        - name: data
+          emptyDir: {}
       terminationGracePeriodSeconds: 0
   revisionHistoryLimit: 0
   strategy:
