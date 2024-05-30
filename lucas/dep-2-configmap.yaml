@@ -32,10 +32,6 @@ spec:
                 key: username
           - name: POSTGRESQL_PASSWORD
             value: "pswd"
-        command:
-        - /bin/sh
-        - -c
-        - echo "Container UP. Requesting DB:" && psql -U "$POSTGRESQL_USER" -d "$POSTGRESQL_DATABASE" -c "SELECT 1;" && tail -f /dev/null
       terminationGracePeriodSeconds: 0
   revisionHistoryLimit: 0
   strategy:
