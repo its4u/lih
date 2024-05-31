@@ -6,5 +6,5 @@ spec:
   tags:
   - from:
       kind: DockerImage
-      name: docker.io/codercom/code-server
+      name: docker.io/jefferyb/code-server
     name: latest
