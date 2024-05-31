@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vscode
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vscode
+  template:
+    metadata:
+      labels:
+        app: vscode
+    spec:
+      containers:
+      - name: container
+        image: image-registry.openshift-image-registry.svc:5000/sample/vscode:latest
+        imagePullPolicy: Always
+      terminationGracePeriodSeconds: 0
+  revisionHistoryLimit: 0
+  strategy:
+    type: Recreate
