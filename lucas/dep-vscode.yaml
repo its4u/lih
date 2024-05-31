@@ -12,10 +12,22 @@ spec:
       labels:
         app: vscode
     spec:
+      volumes:
+      - name: data
+        emptyDir: {}
       containers:
       - name: container
         image: docker.io/jefferyb/code-server:latest
         imagePullPolicy: IfNotPresent
+        env:
+        - name: CODER_PASSWORD
+          value: lih
+        ports:
+        - containerPort: 9000
+          protocol: TCP
+        volumeMounts:
+        - name: data
+          mountPath: /home/coder/projects
       terminationGracePeriodSeconds: 0
   revisionHistoryLimit: 0
   strategy:
