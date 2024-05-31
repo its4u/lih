@@ -15,7 +15,7 @@ spec:
       containers:
       - name: container
         image: docker.io/jefferyb/code-server:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
       terminationGracePeriodSeconds: 0
   revisionHistoryLimit: 0
   strategy:
