@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: vscode
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: vscode
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: container
-        image: image-registry.openshift-image-registry.svc:5000/sample/vscode:latest
+        image: docker.io/jefferyb/code-server:latest
         imagePullPolicy: Always
       terminationGracePeriodSeconds: 0
   revisionHistoryLimit: 0
