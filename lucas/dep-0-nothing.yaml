@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: postgresql
 spec:
-  replicas: 0
+  replicas: 10
   selector:
     matchLabels:
       app: postgresql
