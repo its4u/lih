@@ -19,6 +19,13 @@ spec:
         ports:
           - containerPort: 5432
             protocol: TCP
+        env:
+          - name: POSTGRESQL_DATABASE
+            value: "mydb"
+          - name: POSTGRESQL_USER
+            value: "pguser"
+          - name: POSTGRESQL_PASSWORD
+            value: "pgpswd"
         volumeMounts:
           - name: data
             mountPath: /var/lib/pgsql/data
